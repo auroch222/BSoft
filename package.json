@@ -1,5 +1,5 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "BSoft",
   "version": "1.0.0",
   "description": "OpenShift Sample Application",
   "keywords": [
@@ -9,7 +9,7 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
+    "name": "BSoft",
     "email": "ramr@example.org",
     "url": "http://www.openshift.com/"
   },
@@ -25,7 +25,9 @@
   },
 
   "dependencies": {
-    "express": "~3.4.4"
+    "express": "~3.4.4",
+    "socket.io": "~1.1.0",
+    "mogodb": "1.4.17"
   },
   "devDependencies": {},
   "bundleDependencies": [],
