@@ -11,16 +11,16 @@ var app = new App();
 
 
 /*listen to the port and host where those two are environment variables*/
-app.http.listen(OPENSHIFT_NODEJS_PORT,OPENSHIFT_NODEJS_IP);
+app.http.listen((process.env.PORT || 5000));
 
 
 //handle page requests with response(s:1 at this time :D)
 function handle(req,res){
-	if(req.url == '/home'){
+	if(req.url == '/'){
 		app.fs.readFile('./public/index.html',function(error,data){
 				if(error){
 					res.writeHead(404,{'Content-Type':'text/html'});
-					res.end('Sorry not Found!');
+					res.end('Content You Requested Is Not Available, Sorry! :(');
 				}else{
 					res.writeHead(200,{'Content-Type':'text/html'});
 					res.end(data);

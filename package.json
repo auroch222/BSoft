@@ -1,37 +1,27 @@
 {
   "name": "BSoft",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
-  "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "openshift"
-  ],
-  "author": {
-    "name": "BSoft",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+  "version": "0.0.1",
+  "description": "BSoft WebPage Using node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
   },
-  "homepage": "http://www.openshift.com/",
+  "dependencies": {
+    "express": "~4.9.x",
+    "mongodb": "1.4.17",
+    "socket.io": "1.1.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/auroch222/BSoft"
   },
-
-  "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
-  },
-
-  "dependencies": {
-    "express": "~3.4.4",
-    "socket.io": "~1.1.0",
-    "mogodb": "1.4.17"
-  },
-  "devDependencies": {},
-  "bundleDependencies": [],
-
-  "private": true,
-  "main": "server.js"
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }

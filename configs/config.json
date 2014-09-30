@@ -1,4 +1,1 @@
-{
-	"host": "OPENSHIFT_NODEJS_IP",
-	"port": "OPENSHIFT_NODEJS_PORT"
-}
+//left blank for I don't know purposes
