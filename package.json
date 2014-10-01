@@ -1,27 +1,52 @@
+/*main package file for the app.
+ *dependencies:
+  *mongodb
+  *socket.io
+  *express.js
+*/
+/*BSoft web app.
+ *license: Mit
+ *author: Irongeorge, auroch222
+ *Node rocks!
+ *Thanks for checking this out if you find some errors or stuff that is not considered
+ **as the best way to do it by professionals I'm sorry!
+ *contact me @ironmusician
+*/
 {
-  "name": "BSoft",
+  "name": "Bsoft",
   "version": "0.0.1",
-  "description": "BSoft WebPage Using node.js",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+  "description": "Bsoft Page",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "bsoft",
+    "openshift"
+  ],
+  "author": {
+    "name": "Irongeorge",
+    "email": "ironmusician@gmail.com",
+    "url": "http://irongeorge.github.io"
   },
-  "dependencies": {
-    "express": "~4.9.x",
-    "mongodb": "1.4.17",
-    "socket.io": "1.1.0"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
+  "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/auroch222/BSoft"
+    "url": "" //shesacvlelia git is repository ze
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "express": "~3.4.4",
+    "mongodb": "", //no current version
+    "socket.io": "" //no current version
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "main": "server.js"
 }
