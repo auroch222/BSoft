@@ -4,7 +4,7 @@
 var App =  function(){
 	this.fs = require('fs'); //File System
 	this.path = require('path'); //For handling and transforming file paths.
-	this.http = require('http').createServer(handle); //HTTP server 'handler' function that runs 
+	this.http = require('http'); //HTTP server 'handler' function that runs 
 	this.io = require('socket.io'); //Websockets/socket.io 
 	this.mongo = require('mongodb').MongoClient; //MongoDB client
 	this.express = require('express'); //require express :p I kinda dislike it but openshift pleases me to do it I think! :(
