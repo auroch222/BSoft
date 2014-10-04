@@ -1,17 +1,3 @@
-/*main package file for the app.
- *dependencies:
-  *mongodb
-  *socket.io
-  *express.js
-*/
-/*BSoft web app.
- *license: Mit
- *author: Irongeorge, auroch222
- *Node rocks!
- *Thanks for checking this out if you find some errors or stuff that is not considered
- **as the best way to do it by professionals I'm sorry!
- *contact me @ironmusician
-*/
 {
   "name": "Bsoft",
   "version": "0.0.1",

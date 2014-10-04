@@ -24,6 +24,7 @@ var App =  function(){
 			this.ipAddress = "127.0.0.1";
 		}
 	};
+	
 	//populate cache
 	this.populateCache = function(){
 		if(typeof this.zCache === "undefined"){ //if zCache s undefined
@@ -101,7 +102,7 @@ var App =  function(){
     	this.serv = this.express.createServer();
     	//add handlers for routes
     	for (var r in this.routes) {
-            this.serv.get(r, self.routes[r]);
+            this.serv.get(r, this.routes[r]);
         }
     };
 
@@ -115,7 +116,7 @@ var App =  function(){
     	//Populate Cache
     	this.populateCache();
     	//Setup Termination Handlers
-    	self.setupTerminationHandlers();
+    	this.setupTerminationHandlers();
 
     	//create express server and routes
     	this.initializeServer();
