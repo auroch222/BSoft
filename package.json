@@ -31,7 +31,7 @@
   "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "" //shesacvlelia git is repository ze
+    "url": "https://github.com/auroch222/BSoft" //done
   },
 
   "engines": {
@@ -41,8 +41,8 @@
 
   "dependencies": {
     "express": "~3.4.4",
-    "mongodb": "", //no current version
-    "socket.io": "" //no current version
+    "mongodb": "1.4.17", //done
+    "socket.io": "1.1.0" //done
   },
   "devDependencies": {},
   "bundleDependencies": [],

@@ -23,40 +23,124 @@ var App =  function(){
 			console.warn("No OPENSHIFT_NODEJS_IP var, using 127.0.0.1");
 			this.ipAddress = "127.0.0.1";
 		}
-	}
+	};
 	//populate cache
 	this.populateCache = function(){
 		if(typeof this.zCache === "undefined"){ //if zCache s undefined
-			self.zcache = { 'index.html': '' };
+			this.zCache = { 'index.html': '' };
 		}
-	}
+		this.zCache['index.html'] = fs.readFileSync('./public/index.html');
+		console.log("Dat Html! Yummy :D");
+	};
+	//*****************************************************************
+
+	/******************************************************************
+	*Retrieve Entry Content For Cache
+	*******************************************************************/
+
+	this.getCache = function(key){
+		return this.zCache[key];
+	};
+
+	/*
+		*Terminator - THe termination handler.
+		*Terminate server on receipt of the specified signal.
+		*@param {string} signal  Signal to terminate on.
+	*/
+	this.terminator = function(signal){
+		if(typeof signal ==== "string"){
+			console.log('%s: Received %s - terminating sample app ...',
+                       Date(Date.now()), signal);
+		}
+		console.log('%s: Node server stopped.', Date(Date.now()) );
+		//indicate that node server is stopped!
+		process.exit(1);
+	};
+
+	/*****************************************************************
+     *  Setup termination handlers (for exit and a list of signals).
+     *****************************************************************/
+
+    this.setupTerminationHandlers = function(){
+     	//  Process on exit and signals.
+     	process.on('exit', function(){ 
+     		this.terminator(); 
+     	});
+     	//bugz
+     	['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
+         'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
+        ].forEach(function(element, index, array) {
+            process.on(element, function() { this.terminator(element); });
+        });
+    };
+    //termination process is done!
+
+    /*********************************************************************
+    *************************Main Server Logic****************************
+    *********************************************************************/
+
+    /*
+    	*Routing entries
+    */
+    this.createRoutes = function(){
+    	this.routes = {};
+    	//routes handler for main folder
+    	this.routes['/'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(this.getCache('index.html') );
+        };
+    };
+
+    /* 
+    	*Initialize Serv
+    */
+    this.initializeServer = function(){
+    	//get routes
+    	this.createRoutes();
+    	//create express server
+    	this.serv = this.express.createServer();
+    	//add handlers for routes
+    	for (var r in this.routes) {
+            this.serv.get(r, self.routes[r]);
+        }
+    };
+
+    /*
+    	*Initialize the application
+    */
+
+    this.initialize = function(){
+    	//Setup Main Vars
+    	this.setupVariables();
+    	//Populate Cache
+    	this.populateCache();
+    	//Setup Termination Handlers
+    	self.setupTerminationHandlers();
+
+    	//create express server and routes
+    	this.initializeServer();
+    };
+
+    /*
+    	*Start The Server!
+    */
+
+    this.start = function(){
+    	//Start the app on the port and ip
+    	this.serv.listen(this.port,this.ipAddress,function(){
+    		console.log('%s: Node server started on %s:%d ...',
+                        Date(Date.now() ), this.ipaddress, this.port);
+    	});
+    }
 }
 
-//create new app using of App class
+/*************************************************************************/
+/***************************App Config is done****************************/
+/*************************************************************************/
+
+
+//Create new app using of App class
 var app = new App();
-
-
-/*listen to the port and host where those two are environment variables*/
-app.http.listen(process.env.OPENSHIFT_IP,
-	process.env.OPENSHIFT_PORT || 8080);
-
-
-//handle page requests with response(s:1 at this time :D)
-function handle(req,res){
-	if(req.url == '/'){
-		app.fs.readFile('./public/index.html',function(error,data){
-				if(error){
-					res.writeHead(404,{'Content-Type':'text/html'});
-					res.end('Content You Requested Is Not Available, Sorry! :(');
-				}else{
-					res.writeHead(200,{'Content-Type':'text/html'});
-					res.end(data);
-				}
-
-		});
-	}
-}
-
-
-
+app.initialize();
+app.start();
 
