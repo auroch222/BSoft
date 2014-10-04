@@ -24,7 +24,7 @@ var App =  function(){
 			this.ipAddress = "127.0.0.1";
 		}
 	};
-	
+
 	//populate cache
 	this.populateCache = function(){
 		if(typeof this.zCache === "undefined"){ //if zCache s undefined
@@ -49,7 +49,7 @@ var App =  function(){
 		*@param {string} signal  Signal to terminate on.
 	*/
 	this.terminator = function(signal){
-		if(typeof signal ==== "string"){
+		if(typeof signal === "string"){
 			console.log('%s: Received %s - terminating sample app ...',
                        Date(Date.now()), signal);
 		}
