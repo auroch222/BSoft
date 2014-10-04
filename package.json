@@ -17,7 +17,7 @@
   "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/auroch222/BSoft" //done
+    "url": "https://github.com/auroch222/BSoft"
   },
 
   "engines": {
@@ -27,8 +27,8 @@
 
   "dependencies": {
     "express": "~3.4.4",
-    "mongodb": "1.4.17", //done
-    "socket.io": "1.1.0" //done
+    "mongodb": "1.4.17",
+    "socket.io": "1.1.0"
   },
   "devDependencies": {},
   "bundleDependencies": [],
