@@ -15,7 +15,6 @@
 	  	<header>
 	  		
 	  	</header>
-<<<<<<< HEAD
 		
 
 
@@ -25,7 +24,6 @@
 
 
 	</div>
-=======
       <div class="topmenubar">
         <ul>
        
@@ -39,6 +37,5 @@
       </div><!--topmenubar-->
 
 	</div><!--wall-->
->>>>>>> origin/master
   </body>
 </html>
