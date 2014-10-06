@@ -1,7 +1,26 @@
-body, html, ul, li, p, h1, h2, h3, h4, br, h5, a
-{
-margin:0px;
-padding: 0px;
-
-
+* {
+	margin:0px;
+	padding: 0px;
 }
+body{
+	font-family: "Open Sans", sans-serif, garamond, verdana;
+	background-color: #131313;
+	color: #ccc;
+}
+#wall{
+	margin: auto;
+	width: 1024px;
+	height: 100%;
+	background-color: #232323;
+	max-width: 1024px;
+}
+header {
+	height: 122px;
+	max-width:1024px;
+}
+
+
+
+
+
+
