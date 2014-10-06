@@ -1,5 +1,6 @@
 <?php
 	echo "Hello World!";
+	echo "Hello world!";
 ?>
 <!Doctype html>
 <html lang="en">
@@ -14,3 +15,7 @@
 
   </body>
 </html>
+=======
+	
+?>
+>>>>>>> origin/master
