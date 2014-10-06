@@ -15,7 +15,3 @@
 
   </body>
 </html>
-=======
-	
-?>
->>>>>>> origin/master
