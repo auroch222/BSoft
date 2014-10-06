@@ -13,7 +13,7 @@
   <body>
   	<div id="wall">
 	  	<header>
-	  		dhsaudsudasiydyadyaddgdgdadyasdgadyasdgasy
+	  		
 	  	</header>
 	</div>
   </body>
