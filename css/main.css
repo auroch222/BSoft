@@ -1,3 +1,7 @@
-body{
-  margin: 0px;
+body, html, ul, li, p, h1, h2, h3, h4, br, h5, a
+{
+margin:0px;
+padding: 0px;
+
+
 }
