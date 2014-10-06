@@ -20,7 +20,11 @@ header {
 }
 
 /*topmenubar*/
-.topmenubar{width: 1024px; height: 30px; color:#054b5b;}
+.topmenubar{
+	width: 1024px; 
+	height: 30px; 
+	background-color: #054b5b;
+}
 
 
 
